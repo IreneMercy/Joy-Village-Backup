@@ -33,6 +33,6 @@ def contact(request):
         send_mail('Contact Form',
         message,
         settings.EMAIL_HOST_USER,
-        ['irenemercy700@gmail.com'],
+        ['kimkidati@gmail.com'],
         fail_silently=False)
     return render(request, 'contact.html')
