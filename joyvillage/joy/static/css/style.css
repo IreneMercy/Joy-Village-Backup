@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
 *{
-  font-family:arial;
+  font-family: 'Roboto Condensed', sans-serif;
 
 }
 * {
@@ -81,7 +79,7 @@ nav ul li{
 }
 nav li a{
 	font-size: 16px;
-	font-family: arial;
+	font-family: 'Roboto Condensed', sans-serif;;
 
 }
 nav li a:hover{
@@ -93,7 +91,7 @@ li a{
   list-style-type: none;
   text-decoration: none;
   color:white;
-  font-family:arial;
+  font-family:'Roboto Condensed', sans-serif;;
 }
 ul{
 	float:left;
@@ -106,7 +104,7 @@ li a{
 
 
 .intro{
-	font-size:54px;
+	font-size:35px;
 	color: #000;
 }
 
@@ -253,7 +251,7 @@ background-image: linear-gradient(to right top, #741703, #741703, #741703, #7417
     color: #666666;
     font-size: 15px;
     line-height: 1.8;
-    font-family: 'arial';
+    font-family: ''Roboto Condensed', sans-serif;';
     margin-bottom: 20px;
 }
 .button-set .btn {
@@ -279,10 +277,6 @@ background-image: linear-gradient(to right top, #741703, #741703, #741703, #7417
 }
 .fancy-event-details {
     position: absolute;
-    left: 0;
-    bottom: 0;
-    padding: 0 30px 30px 30px;
-    width: 60%;
     color: #000;
 }
 
@@ -293,23 +287,23 @@ background-image: linear-gradient(to right top, #741703, #741703, #741703, #7417
   padding-left: 1%;
   padding-right: 1%;
   margin-top:3%;
+  opacity: 0.5;
+
 }
 
 
 .full {
-  background: url('../images/education1.jpeg') 0 0 no-repeat;
   min-height: 634px;
-  background-position: center;
+  background-position: top;
+  color: white;
   color: black;
-  color: black;
+  background-repeat: no-repeat;
 }
 .half {
-  background: url('../images/child7.jpg') 0 0 no-repeat;
-  min-height: 301px;
+  min-height:400px;
   margin-bottom: 30px;
 }
 .half2 {
-  background: url('../images/child8.jpg') 0 0 no-repeat;
   min-height: 301px;
 }
 .full, .half, .half2 {
@@ -358,7 +352,9 @@ background-image: linear-gradient(to right top, #741703, #741703, #741703, #7417
 }
 
 .fancy{
-  margin-top: 10%;
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 16px;
 
 }
 .fancie{
@@ -378,18 +374,17 @@ background-image: linear-gradient(to right top, #741703, #741703, #741703, #7417
     font-size: 22px;
     color: #FFF;
     font-weight: 400;
-    margin: 0 0 10px;
 }
 .fancy a:hover{
   color:#fff;
-  text-decoration-line: none;
+  text-decoration-line: line-through;
 }
 
 .fancy-event-detail i {
     font-size: 13px;
     color:#d9d9d9;
     font-style: normal;
-    font-family: arial;
+    font-family: 'Roboto Condensed', sans-serif;;
     font-weight: 400;
     margin-left:6%;
 }
@@ -403,12 +398,12 @@ background-image: linear-gradient(to right top, #741703, #741703, #741703, #7417
   font-size:50px;
   line-height: 2;
 }
-.bg-7{
+/* .bg-7{
   background-image: url('../images/parallax7.jpg');
   height: 100vh;
   background-repeat: no-repeat;
 
-}
+} */
 .video-overlay .round-icon-btn {
     position: relative;
     display: inline-block;
@@ -425,7 +420,7 @@ background-color:#2e2e2e;
 color: #fff;
 float:left;
 width: 100%;
-font-family:arial;
+font-family:'Roboto Condensed', sans-serif;;
 padding-bottom: 5%;
 }
 
@@ -514,3 +509,63 @@ footer .widget ul li {
     font-size:16;
   }
 }
+
+
+
+/* About */
+
+.about{
+  font-family: Roboto;
+}
+.padding-0{
+    padding-right:0;
+    padding-left:0;
+}
+
+.events h3{
+  font-family: 'Roboto Condensed', sans-serif;
+
+}
+
+
+
+/* news */
+.bg-image{
+  height:auto;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7) ), url('../images/water2.jpeg');
+  -webkit-background-size: cover;
+  -moz-background-size:  cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+.overlay{
+  background-image: linear-gradient(to right top, #d16b8a, #aa5f88, #82547e, #5c496e, #3d3c57, #3a445f, #374d66, #34556c, #397b95, #3aa4bb, #43cfda, #5ffbf1);
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size:  cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: auto;
+  opacity: 0.9;
+}
+.sectionnews{
+  margin-top: 10%;
+}
+
+
+
+/* home */
+.history{
+  font-size: 16px;
+}
+
+/* careers */

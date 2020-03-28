@@ -2,35 +2,32 @@
 
 {% block content %}
 <div class="container-fluid">
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-6" style="background-image:url({{event.image}})">
-        {% for event in events %}
-         <div class="half">
-             <div class="overlay-effect h-100 w-100">
-               <div>
-                 <span type="button" class="text-white btn btn-sm">{{event.date}}</span>
-              </div>
-              <div class="fancy-event-detail">
-                <h3 class="fancy"><a href="#" title="">{{event.description}}</a></h3>
-                <i>{{event.venue}}</i>
-              </div>
-             </div>
-         </div>
-         <!-- <div class="half2">
-             <div class="overlay-effect h-100 w-100">
-               <div>
-                 <span type="button" class="text-white btn btn-sm">Oct 12, 2016 3:53 am</span>
-               </div>
-               <div class="fancy-event-detail">
-                 <h3 class="fancy"><a href="#" title="">Seminar For Children To Learn <br> About The Future</a></h3>
-                 <i> 90012 South Street, Sanford, FL South Africa </i>
-               </div>
-             </div>
-         </div> -->
-       {% endfor%}
-      </div>
-    </div>
+  <div class="row pt-5">
+      {% for event in events %}
+          <div class="col-md-6">
+            <div class="half" style="background-image:url({{event.image.url}})">
+              <div class="overlay-effect h-100 w-100 ">
+                <div>
+                  <span type="button" class="text-white btn btn-sm mt-5">{{event.date}}</span>
+                </div>
+                <div class="">
+                  <h3 class="fancy mt-5">{{event.title}}</h3>
+                  <h3 class="fancy">
+                    {{event.description}}
+                     <br>
+                     <br>
+                    <i>Venue: {{event.venue}}</i>
+                    <br>
+                    <i>Time: {{event.time}}</i>
+                  </h3>
+                  <h3 class="fancy"></h3>
+                  <h3 class="fancy"></h3>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+    {% endfor%}
   </div>
 </div>
 {% endblock %}

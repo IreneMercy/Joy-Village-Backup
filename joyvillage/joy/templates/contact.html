@@ -3,11 +3,9 @@
 
 {% block content %}
   <h1>Send message</h1>
-  <form class="" action="{% url 'contact' %}" method="post">
+  <form  method="post">
     {% csrf_token %}
-    <input type="text" name="subject" value="subject">
-    <br>
-    <textarea name="message" rows="8" cols="80" placeholder="Message..."></textarea>
-    <input type="submit" name="email" value="Send">
+    {{form.as_p}}
+    <button type="submit">Send</button>
   </form>
 {% endblock %}

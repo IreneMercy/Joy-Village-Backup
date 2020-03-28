@@ -40,10 +40,10 @@
           </div>
           <div class="collapse navbar-collapse" id="basicExampleNav">
             <ul class="navbar-nav ml-auto text-white mt-5">
-              <li><a href="#" title="">About</a></li>
+              <li><a href="{% url 'about' %}" title="">About</a></li>
               <li><a href="{% url 'events'%}" title="">Events</a></li>
               <li><a href="{% url 'gallery'%}" title="">Gallery</a></li>
-              <li><a href="#" title="">Our News</a></li>
+              <li><a href="{% url 'news' %}" title="">Our News</a></li>
               <div class="dropdown">
                 <li><a class="dropdown-toggle" data-toggle="dropdown" href="#" title="">Programs</a>
                     <div class="dropdown-menu">
@@ -53,9 +53,9 @@
                     </div>
                 </li>
               </div>
-              <li><a href="#" title="">Careers</a></li>
-              <li><a href="#" title="">Tenders</a></li>
-              <li><a href="#" title="">Partners</a></li>
+              <li><a href="{% url 'careers' %}" title="">Careers</a></li>
+              <li><a href="{% url 'tenders' %}" title="">Tenders</a></li>
+              <li><a href="{% url 'partners' %}" title="">Partners</a></li>
               <li><a href="{% url 'contact' %}" title="">Contact</a></li>
             </ul>
           </div>
@@ -69,11 +69,57 @@
    </div>
 
 
-    <div class="container-full">
       {% block content%}
 
       {% endblock%}
-    </div>
+
+      <footer id="footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="about-widget">
+                <div class="logo"><a href="#" title=""><img src="{% static 'images/logo.png'%}" alt="" class="w-100"></a></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dolor amet glavrida tellus, quis lorem ipsum tooltip luctus ligula. </p>
+                <!-- <form class="newsletter-form">
+                  <input type="text" placeholder="Enter Your E-mail">
+                  <button><i class="fa fa-paper-plane-o"></i></button>
+                </form> -->
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="widget">
+                <h3 class="widget-title">Useful Links</h3>
+                <ul>
+                  <li><a href="#" title="">Home</a></li>
+                  <li><a href="#" title="">About Us</a></li>
+                  <li><a href="#" title="">Provicy Policy</a></li>
+                  <li><a href="#" title="">Terms &amp; Conditions</a></li>
+                  <li><a href="#" title="">Blog</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="widget">
+                <h3 class="widget-title">Connects</h3>
+                <ul>
+                  <li>2005 Stokes Isle Apt. 896, Venaville 10010, USA</li>
+                  <li>info@yourdomain.com</li>
+                  <li>(+68) 120034509</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="line">
+        <div class="container-fluid mt-5 copyright">
+          <div class="row text-center">
+            <div class="col-md-12">
+              <p class="text-white">&copy;Joy Village Foundation-Created by Mercy $ Exo</p>
+
+            </div>
+          </div>
+        </div>
+      </footer>
    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{% static 'js/scripts.js'%}"></script>
    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

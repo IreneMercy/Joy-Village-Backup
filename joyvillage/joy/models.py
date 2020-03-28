@@ -8,7 +8,7 @@ class Events(models.Model):
     time = models.CharField(max_length=30)
     image = models.ImageField()
     title = models.CharField(max_length=30)
-    description = models.CharField(max_length=155)
+    description = models.TextField(max_length=155)
     pub_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -29,3 +29,31 @@ class Gallery(models.Model):
 
     class Meta:
         ordering = ['pub_date']
+class News(models.Model):
+    newsimage = models.ImageField(upload_to="media")
+    title = models.CharField(max_length=30)
+    description = models.TextField(max_length=1000)
+    pub_date = models.DateTimeField(auto_now_add=True)
+    caption = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.caption
+
+    class Meta:
+        ordering = ['pub_date']
+
+class Careers(models.Model):
+    position = models.CharField(max_length=100)
+    description = models.TextField(max_length=500)
+    requirements = models.CharField(max_length=255)
+    instruction = models.CharField(max_length=100)
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100)
+    sender = models.EmailField()
+    subject = models.CharField(max_length=100)
+    message = models.TextField()
+    time = models.DateTimeField(auto_now_add=True, db_index=True)
+
+    def __str__(self):
+        return 'Message for {}'.format(self.sender)
