@@ -47,13 +47,18 @@ class Careers(models.Model):
     description = models.TextField(max_length=500)
     requirements = models.CharField(max_length=255)
     instruction = models.CharField(max_length=100)
-
-class Contact(models.Model):
-    name = models.CharField(max_length=100)
-    sender = models.EmailField()
-    subject = models.CharField(max_length=100)
-    message = models.TextField()
-    time = models.DateTimeField(auto_now_add=True, db_index=True)
+    pub_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return 'Message for {}'.format(self.sender)
+        return self.position
+
+    class  Meta:
+        ordering = ['pub_date']
+
+
+class Partners(models.Model):
+    partnerimage = models.ImageField(upload_to="media")
+    name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.name

@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% load static%}
+{% load crispy_forms_tags%}
+
 
 <div class="container-full">
 
@@ -18,7 +20,34 @@
         </div>
         <div class="row">
           <div class="col-md-4">
-            <button type="button" name="button" class="button btn text-white btn-header">Join Our Course</button>
+            <button type="button" name="button" data-toggle="modal" data-target="#exampleModalLong" class="button btn text-white btn-header">Join Our Course</button>
+            <!-- Modal -->
+          <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="col-md-12 card-body card-bg">
+                    <h1>Contact Us</h1>
+                    <form  method="post">
+                      {% csrf_token %}
+                      {{form|crispy}}
+                      <div class="form-actions mb-5">
+                           <button class="btn btn-primary btn-sm" type="submit">Send Message</button>
+                      </div>
+                     </form>
+                  </div>                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
           </div>
           <div class="col-md-4"></div>
         </div>
@@ -34,7 +63,33 @@
             <h6 class="text-white mt-2">LET'S START DOING YOUR BIT FOR THE WORLD. JOIN US AS A VOLUNTEER</h6>
           </div>
           <div class="col-md-4">
-            <a class="btn style3" href="#" title="">Become A Volunteer</a>
+            <a class="btn " data-toggle="modal" data-target="#exampleModalLong" href="#" title="">Become A Volunteer</a>
+            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <!-- <h5 class="modal-title" id="exampleModalLongTitle"><small>Contact</small></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button> -->
+                  </div>
+                  <div class="modal-body">
+                    <div class="col-md-12 card-body card-bg">
+                      <h1>Contact Us</h1>
+                      <form  method="post">
+                        {% csrf_token %}
+                        {{form|crispy}}
+                        <div class="form-actions mb-5">
+                             <button class="btn btn-primary btn-sm" type="submit">Send Message</button>
+                        </div>
+                       </form>
+                    </div>                </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -152,8 +207,60 @@
                 <h2><i>adopt a child &amp; </i>SAVE LIVES</h2>
                 <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit autugit, sed <br> consequuntur magni dolores ratione voluptatem sequi nesciunt. Neque porro <br> quisquamst. Nemo enim ipsam voluptatem quia volupta.</p>
                 <div class="button-set">
-                  <a class="btn style1 mt-3" href="#" title="">ADOPT A CHILD</a>
-                  <a class="btn style3 mt-3" href="#" title="">JOIN OUR COMPAIGN</a>
+                  <a class="btn style1 mt-3" data-toggle="modal" data-target="#exampleModalLong" href="#" title="">ADOPT A CHILD</a>
+                  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <!-- <h5 class="modal-title" id="exampleModalLongTitle"><small>Contact</small></h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button> -->
+                        </div>
+                        <div class="modal-body">
+                          <div class="col-md-12 card-body card-bg">
+                            <h1>Contact Us</h1>
+                            <form  method="post">
+                              {% csrf_token %}
+                              {{form|crispy}}
+                              <div class="form-actions mb-5">
+                                   <button class="btn btn-primary btn-sm" type="submit">Send Message</button>
+                              </div>
+                             </form>
+                          </div>                </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <a class="btn style3 mt-3" data-toggle="modal" data-target="#exampleModalLong" href="#" title="">JOIN OUR COMPAIGN</a>
+                  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <!-- <h5 class="modal-title" id="exampleModalLongTitle"><small>Contact</small></h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button> -->
+                        </div>
+                        <div class="modal-body">
+                          <div class="col-md-12 card-body card-bg">
+                            <h1>Contact Us</h1>
+                            <form  method="post">
+                              {% csrf_token %}
+                              {{form|crispy}}
+                              <div class="form-actions mb-5">
+                                   <button class="btn btn-primary btn-sm" type="submit">Send Message</button>
+                              </div>
+                             </form>
+                          </div>                </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
               </div>

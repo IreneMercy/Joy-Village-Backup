@@ -129,10 +129,15 @@ background-image: linear-gradient(to right top, #741703, #741703, #741703, #7417
 }
 .style3:hover{
   background-color:#8c001A;
+  color: #fff;
 }
 .volunteer a{
 	background-color: black;
 	color: white;
+}
+.volunteer a:hover{
+  background-color:#8c001A;
+  color: #fff;
 }
 
 .block{
@@ -259,6 +264,10 @@ background-image: linear-gradient(to right top, #741703, #741703, #741703, #7417
     margin: 0 20px 0 0;
 background-image: linear-gradient(to right top, #741703, #741703, #741703, #741703, #741703, #741703, #741703, #741703, #741703, #741703, #741703, #741703);    color: white;
 
+}
+.button-set .btn:hover{
+  background-image: linear-gradient(to right top, #741703, #741703, #741703, #741703, #741703, #741703, #741703, #741703, #741703, #741703, #741703, #741703);    color: white;
+  color: #fff;
 }
 /* end of adoption */
 
@@ -416,7 +425,7 @@ background-image: linear-gradient(to right top, #741703, #741703, #741703, #7417
 
 /* footer section*/
 #footer {
-background-color:#2e2e2e;
+background-image: linear-gradient(to right top, #02233d, #191c33, #1f1727, #1e131c, #1a1014, #1f151a, #241a20, #291f26, #342f40, #30435b, #1a596e, #036f74);
 color: #fff;
 float:left;
 width: 100%;
@@ -568,4 +577,12 @@ footer .widget ul li {
   font-size: 16px;
 }
 
-/* careers */
+/* Contact */
+.card-bg{
+  background-image: linear-gradient(to right top, #d16b8a, #aa5f88, #82547e, #5c496e, #3d3c57, #3a445f, #374d66, #34556c, #397b95, #3aa4bb, #43cfda, #5ffbf1);
+  color: #ffffff;
+  margin-bottom: 5%;
+}
+.contactdetail{
+  text-decoration-line: line-through;
+}

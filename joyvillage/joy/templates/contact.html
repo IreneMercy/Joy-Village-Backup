@@ -1,11 +1,35 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags%}
 
 {% block content %}
-  <h1>Send message</h1>
-  <form  method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Send</button>
-  </form>
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-6 card-body card-bg">
+        <h1>Contact Us</h1>
+        {% if message %}
+        {% for message in messages %}
+        <p class="text-black mt-5 pt-5">{{message}}</p>
+        {% endfor %}
+        {% endif %}
+        <form  method="post">
+          {% csrf_token %}
+          {{form|crispy}}
+          <div class="form-actions mb-5">
+               <button class="btn btn-primary btn-sm" type="submit">Send Message</button>
+          </div>
+         </form>
+      </div>
+      <div class="col-md-6">
+        <div class="col-md-12 text-center">
+          <h4 class="contactdetail">Contact Details</h4>
+          <p>Email:<a href="#">jvf@gmail.org</a></p>
+          <p>Phone:+254 (790 545-131)</p>
+        </div>
+        <div class="mapouter mt-5"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=kiambu&t=&z=9&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.emojilib.com"></a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
+
+      </div>
+    </div>
+  </div>
+
 {% endblock %}
