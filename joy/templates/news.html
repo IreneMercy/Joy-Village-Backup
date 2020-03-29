@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="container-full bg-image">
+  <section class="container-fluid overlay">
+    <div class="container">
+      <div class="row pb-5 mb-5">
+        <div class="col-md-12 text-white mt-3">
+          <br><br><br>
+          <p>Hello! Welcome</p>
+          <h1><strong>Joy Vilaage Foundation News</strong></h1>
+          <q cite="" class="text-black">
+            <p>We foresaw the problem many years before anybody else did.<br> We searched for solutions that will last through generations. <br> And we spoke about them when nobody else dared to. <br> Now we are doing something about it!!</p>
+          </q>
+        </div>
+        <div class="col-md-12 text-center">
+          <a href="#news"><span style='font-size:50px;'>&#8675;</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4  pb-5 bg-light bg-news"  id="news">
+      <div class="col-md-12 text-center mt-5">
+        <h2 class=""><i>Joy  Village Foundation </i>News</h2>
+
+      </div>
+      {% for x in news %}
+      <div class="col-md-4 sectionnews">
+        <div class="card">
+          <div class="card-body">
+            <img class="w-100" src="{{x.newsimage.url}}" alt="">
+          </div>
+          <div class="card-body">
+            <h5 class="text-uppercase"><strong>{{x.title}} <br> <small><strong>{{x.caption}}</strong></small></strong></h5>
+            <p>{{x.description}}</p>
+            <p>Published on: {{x.pub_date}}</p>
+          </div>
+        </div>
+      </div>
+
+      {% endfor%}
+    </div>
+  </section>
+</div>
+
+{% endblock %}
