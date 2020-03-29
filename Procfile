@@ -1,1 +1,1 @@
-web: gunicorn joyvillage.wsgi --log-file-
+web: gunicorn joyvillage.wsgi
