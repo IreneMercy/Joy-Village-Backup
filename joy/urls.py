@@ -15,6 +15,7 @@ urlpatterns = [
     path('tenders', views.tenders, name='tenders'),
     path('partners', views.partners, name='partners'),
     path('success/', views.successView, name='success'),
+    path('kiambu', views.kiambu, name='kiambu')
 
 
 

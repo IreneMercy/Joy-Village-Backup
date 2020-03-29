@@ -94,3 +94,6 @@ def contact(request):
 
 def successView(request):
     return HttpResponse('Success! Thank you for your message.')
+    
+def kiambu(request):
+    return render(request, 'kiambu.html')
