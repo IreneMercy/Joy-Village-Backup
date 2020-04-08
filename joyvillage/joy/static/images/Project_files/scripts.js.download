@@ -1,0 +1,9 @@
+$document.ready(function{
+	var colorChangeOnScroll = function(){
+		$('.bg-color').css({
+			backgroundcolor:$(this).scrollTop()>1?
+				'rgba(0,0,0)':'transparent'
+		})
+
+	}
+})

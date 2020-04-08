@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+*{
+/*  font-family: 'Roboto Mono', monospace;
+*/  font-family:georgia;
+
+}
+.header{
+  background-image: url('../images/darkened.jpg');
+  height:100vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.overlay{
+	  background-color: black;
+	  width: 100%;
+	  height:100vh;
+	  opacity: 0.8;
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  right:0;
+	  bottom: 0;
+
+}
+.bg-color{
+	background-color:rgb(20, 20, 20, 0.7);
+	opacity: 0.8;
+}
+.logo{
+  max-width:85%;
+  height: auto;
+}
+header.transparent{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  padding: 20px 30px;
+}
+
+nav ul li{
+  display: inline-block;
+  margin:3px 0 3px 5px;
+
+}
+li a{
+  list-style-type: none;
+  text-decoration: none;
+  color:whitesmoke;
+  font-family:georgia;
+}
+
+.social-media{
+  margin: 10px ;
+}
+
+
+.intro{
+	font-size:54px;
+	color: white;
+}
+
+.intro span{
+	background:#8c001A;
+	color:#fff;
+	padding-top: 2px;
+	padding-bottom: 2px;
+
+}
+.intro{
+	color: #000;
+}
+.button{
+	background-color:#8c001A;
+	color: white;
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+	margin: 4px 2px;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	border-radius:3%; 
+	text-transform: capitalize;
+	font-weight: bold;
+}
+/*.fab{
+	background-color:white;
+	color:#8c001A;
+	border: solid #8c001A;
+}*/
+.fab{
+	color:white;
+}
+.volunteer{
+	background-color: #8c001A;
+}
+.volunteer input{
+	background-color: black;
+	color: white;
+}
+.donate-text{
+	font-weight: bold;
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+	margin: 4px 2px;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	border-radius:3%; 
+	text-transform: capitalize;
+	font-weight: bold;
+}
+
