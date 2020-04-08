@@ -3,7 +3,7 @@
 {% load crispy_forms_tags%}
 
 
-<div class="container-full">
+<div class="container">
 
   {% block content %}
 
@@ -13,14 +13,14 @@
       <div class="container header-content pt-5">
         <div class="row align-items-center ">
           <div class="col-md-12 mt-5">
-            <p class="intro text-titlecase text-white"><strong>AIDS Kills persons, <br> Cancer kills persons, <br> Malaria kills persons.<br></strong> <span>Illicit alcohol and drug abuse destroy generations !!</span></p>
+            <p class="intro text-titlecase text-white"><strong>AIDS Kills people, <br> Cancer kills people, <br> Malaria kills people.<br></strong> <span class="intro2">Illicit alcohol and drug abuse destroy generations !!</span></p>
             <p class="text-uppercase text-white donate-text"><strong> you Touch a life, you change the community</strong></p>
           </div>
 
         </div>
         <div class="row">
           <div class="col-md-4">
-            <button type="button" name="button" data-toggle="modal" data-target="#exampleModalLong" class="button btn text-white btn-header">Join Our Course</button>
+            <button type="button" name="button" data-toggle="modal" data-target="#exampleModalLong" class="button btn text-white btn-header">Join Our Cause</button>
             <!-- Modal -->
           <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -33,8 +33,7 @@
                 </div>
                 <div class="modal-body">
                   <div class="col-md-12 card-body card-bg">
-                    <h1>Contact Us</h1>
-                    <form  method="post">
+                    <form class="form"  method="POST" data-url=''>
                       {% csrf_token %}
                       {{form|crispy}}
                       <div class="form-actions mb-5">
@@ -68,22 +67,21 @@
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <!-- <h5 class="modal-title" id="exampleModalLongTitle"><small>Contact</small></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
-                    </button> -->
+                    </button>
                   </div>
                   <div class="modal-body">
                     <div class="col-md-12 card-body card-bg">
-                      <h1>Contact Us</h1>
-                      <form  method="post">
+                      <form class="myform"  method="POST" data-url=''>
                         {% csrf_token %}
                         {{form|crispy}}
                         <div class="form-actions mb-5">
                              <button class="btn btn-primary btn-sm" type="submit">Send Message</button>
                         </div>
                        </form>
-                    </div>                </div>
+                    </div>
+                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   </div>
@@ -112,7 +110,6 @@
                 <p>The JVF movement started in central Kenya, in an area ravaged by the negative effects of illicit alcohol and drugs that had eaten up the fabrics of the society over many years. <br> <br> A prosperous society has slowly slid into despair and destruction as a result of a vice that could have been easily managed. </p>
 
 
-                <h6 class="mt-3 text-danger">Daniel Whitaker</h6>
               </div>
             </div>
           </div>
@@ -204,10 +201,10 @@
             <div class="col-md-12">
               <div class="title  mt-5">
                 <span>Promote and Monitor Human Rights</span>
-                <h2><i>adopt a child &amp; </i>SAVE LIVES</h2>
+                <h2><i>adopt a youth group &amp; </i>SAVE LIVES</h2>
                 <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit autugit, sed <br> consequuntur magni dolores ratione voluptatem sequi nesciunt. Neque porro <br> quisquamst. Nemo enim ipsam voluptatem quia volupta.</p>
                 <div class="button-set">
-                  <a class="btn style1 mt-3" data-toggle="modal" data-target="#exampleModalLong" href="#" title="">ADOPT A CHILD</a>
+                  <a class="btn style1 mt-3" data-toggle="modal" data-target="#exampleModalLong" href="#" title="">ADOPT A YOUTH GROUP</a>
                   <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
@@ -219,15 +216,16 @@
                         </div>
                         <div class="modal-body">
                           <div class="col-md-12 card-body card-bg">
-                            <h1>Contact Us</h1>
-                            <form  method="post">
+                            <form id="myform"  method="POST" data-url=''>
                               {% csrf_token %}
-                              {{form|crispy}}
+                              <p>{{form|crispy}}</p>
                               <div class="form-actions mb-5">
-                                   <button class="btn btn-primary btn-sm" type="submit">Send Message</button>
+                                   <button class="btn btn-primary btn-sm"  type="submit">Send Message</button>
+
                               </div>
                              </form>
-                          </div>                </div>
+                          </div>
+                        </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
@@ -303,7 +301,7 @@
                     <div class="half" style="background-image:url({{event.image.url}})">
                       <div class="overlay-effect h-100 w-100 ">
                         <div>
-                          <span type="button" class="text-white btn btn-sm mt-5">{{event.date}}</span>
+                          <button type="button" class="text-white btn btn-sm mt-5 pl-5 btn-event">{{event.date}}</button>
                         </div>
                         <div class="">
                           <h3 class="fancy mt-5">{{event.title}}</h3>
@@ -343,14 +341,46 @@
     <section id="testimonial">
       <div class="block testimonials">
         <div class="title">
-          <span>Partners testimonials</span>
+          <span>Feedback</span>
           <h2>Testimonials</h2>
         </div>
-
+        <!-- <div class="container testimonial-slider">
+          <div class="item text-center">
+              {% for i in comments %}
+                      <img src="{{i.image.url}}" alt="" width="254">
+                      <h3>{{i.name}}</h3>
+                      <small>~ {{i.content}}</small>
+                      <hr>
+              {% endfor %}
+              <a class="icon" href="#" onclick="getdiv(-1)">&#10094</a>
+              <a class="icon" href="#" onclick="getdiv(-1)">&#10095</a>
+          </div>
+          <script>
+            var index=1;
+            showdiv(index);
+            function getdiv(n){
+              showdiv(index +=n);
+            }
+            function showdiv(n){
+              var i;
+              var a = document.getElementsByClassName('item');
+              if(n > a.length){
+                index=1;
+              }
+              if(n <i ){
+                index = a.length;
+              }
+              for(i=0;i<a.length;i++){
+                a[i].style.display = "none";
+              }
+              a[index-1].style.display = "block"
+            }
+          </script>
+        </div> -->
       </div>
 
-
     </section>
+  </div>
     {% endblock content%}
 </div>
 <!DOCTYPE html>

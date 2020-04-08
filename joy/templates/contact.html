@@ -4,19 +4,16 @@
 
 {% block content %}
   <div class="container">
+    <p class="text-black mt-5 pt-5">{{message}}</p>
     <div class="row mt-5">
       <div class="col-md-6 card-body card-bg">
         <h1>Contact Us</h1>
-        {% if message %}
-        {% for message in messages %}
-        <p class="text-black mt-5 pt-5">{{message}}</p>
-        {% endfor %}
-        {% endif %}
-        <form  method="post">
+        <form id="contactform"  method="POST" data-url='/contact'>
           {% csrf_token %}
-          {{form|crispy}}
+          <p>{{form|crispy}}</p>
           <div class="form-actions mb-5">
-               <button class="btn btn-primary btn-sm" type="submit">Send Message</button>
+               <button class="btn btn-primary btn-sm"  type="submit">Send Message</button>
+
           </div>
          </form>
       </div>

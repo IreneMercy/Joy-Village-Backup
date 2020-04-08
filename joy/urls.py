@@ -6,7 +6,8 @@ from django.conf import settings
 
 urlpatterns = [
     path('', views.home, name="home"),
-    path('events', views.events, name='events'),
+    path('events', views.upcomingevents, name='upcoming'),
+    path('pastevent', views.pastevents, name='past'),
     path('gallery', views.gallery, name='gallery'),
     path('contact', views.contact, name='contact'),
     path('about', views.about, name='about'),
@@ -14,8 +15,14 @@ urlpatterns = [
     path('careers', views.careers, name='careers'),
     path('tenders', views.tenders, name='tenders'),
     path('partners', views.partners, name='partners'),
-    path('success/', views.successView, name='success'),
-    path('kiambu', views.kiambu, name='kiambu')
+    path('about', views.about, name='about'),
+    path('kiambu', views.kiambu, name='kiambu'),
+    path('nairobi', views.nairobi, name='nairobi'),
+    path('muranga', views.muranga, name='muranga'),
+    path('nyeri', views.nyeri, name='nyeri'),
+    path('nakuru', views.nakuru, name='nakuru'),
+    path('donate', views.donate, name='donate'),
+
 
 
 

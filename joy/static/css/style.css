@@ -3,13 +3,22 @@
   font-family: 'Roboto Condensed', sans-serif;
 
 }
+.fa{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 14px;
+}
+body {
+    margin-top:110px;
+}
 * {
 	margin: 0;
 	padding: 0;
 }
-
 .content{
   height:auto;
+}
+.social-media{
+  display: inline-block;
 }
 
 .conatct{
@@ -336,7 +345,7 @@ background-image: linear-gradient(to right top, #741703, #741703, #741703, #7417
   opacity: 0;
   transition: .5s ease;
   background-color: rgba(259, 67, 95, 0.7);
-  overflow:hidden;
+
 }
 .overlay-effect span{
   background-color: #a4343a;
@@ -518,8 +527,14 @@ footer .widget ul li {
     font-size:16;
   }
 }
-
-
+.intro2{
+  font-size: 35px;
+}
+@media screen (max-width:480px){
+  .intro span{
+    font-size:16;
+  }
+}
 
 /* About */
 
@@ -576,6 +591,9 @@ footer .widget ul li {
 .history{
   font-size: 16px;
 }
+.modal-md {
+    max-width:60%;
+}
 
 /* Contact */
 .card-bg{
@@ -586,3 +604,41 @@ footer .widget ul li {
 .contactdetail{
   text-decoration-line: line-through;
 }
+
+/* Programs */
+.kiambu{
+  background-image: linear-gradient(to right top, #d16b8a, #aa5f88, #82547e, #5c496e, #3d3c57, #3a445f, #374d66, #34556c, #397b95, #3aa4bb, #43cfda, #5ffbf1);
+
+}
+
+
+
+/* Testimonial */
+.testimonial-slider{
+  margin:50px auto;
+  padding: 0;
+}
+
+.item{
+  width: 800px;
+  height: 300px;
+  align-items: center;
+  margin: auto;
+}
+.icon{
+  width: 25px;
+  padding: 10px;
+  line-height: 40px;
+  background: black;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* event */
+.eventspage h3{
+  font-size: 16px;
+}
+
+.btn-event{
+background-image: linear-gradient(to right top, #741703, #741703, #741703, #741703, #741703, #741703, #741703, #741703, #741703, #741703, #741703, #741703);}

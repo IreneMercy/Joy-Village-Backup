@@ -1,10 +1,10 @@
 from __future__ import unicode_literals
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import Events, Gallery, News, Careers, Partners
+from .models import Events, Gallery, News, Careers, Partners, Testimonials, About, Nairobi, Kiambu, Muranga, Nyeri, Nakuru, PastEvents
 from django.core.mail import send_mail,BadHeaderError
 from django.conf import settings
-from.forms import ContactForm
+from.forms import ContactForm, CommentForm
 from django.contrib import messages
 
 
@@ -17,25 +17,43 @@ def home(request):
             subject = form.cleaned_data['subject']
             from_email = form.cleaned_data['from_email']
             message = form.cleaned_data['message']
-
+            reply_to=[from_email]
             msg_mail = str(message) + " " + str(from_email)
             try:
-                send_mail(subject, msg_mail , from_email, ['kimkidati@gmail.com'], fail_silently=False)
+                send_mail(
+                    subject,
+                    message,
+                    from_email,
+                    ['kimkidati@gmail.com'],
+                    reply_to,
+                )
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
+
     events = Events.objects.all()[:3]
+    comments = Testimonials.objects.all()
     context = {
     'events':events,
     'form':form,
+    'comments':comments,
     }
+    messages.info(request, messages.SUCCESS, 'Email sent successfully.')
     return render(request,'home.html', context)
 
-def events(request):
+def upcomingevents(request):
     events = Events.objects.all()
     context = {
     'events':events,
     }
     return render(request, 'events.html', context)
+
+
+def pastevents(request):
+    events = PastEvents.objects.all()
+    context = {
+    'events':events,
+    }
+    return render(request, 'pastevents.html', context)
 
 def gallery(request):
     gallery = Gallery.objects.all()
@@ -83,17 +101,73 @@ def contact(request):
             subject = form.cleaned_data['subject']
             from_email = form.cleaned_data['from_email']
             message = form.cleaned_data['message']
-
+            reply_to=[from_email]
             msg_mail = str(message) + " " + str(from_email)
             try:
-                send_mail(subject, msg_mail , from_email, ['kimkidati@gmail.com'], fail_silently=False)
+                send_mail(
+                    subject,
+                    message,
+                    from_email,
+                    ['kimkidati@gmail.com'],
+                    sender=form.cleaned_data['from_email'],
+                )
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
-            messages.add_message(request, messages.SUCCESS, 'Email sent successfully.')
+    messages.info(request, messages.SUCCESS, 'Email sent successfully.')
     return render(request, "contact.html", {'form': form,})
 
-def successView(request):
-    return HttpResponse('Success! Thank you for your message.')
-    
+
+
+
+def about(request):
+    about = About.objects.all()
+    context = {
+        'about':about
+    }
+    return render(request, 'about.html', context)
+
+
+
 def kiambu(request):
-    return render(request, 'kiambu.html')
+    programs = Kiambu.objects.all()
+    context = {
+    'programs':programs
+    }
+    return render(request, 'kiambu.html', context)
+
+def nairobi(request):
+    programs = Nairobi.objects.all()
+    context = {
+    'programs':programs
+    }
+    return render(request, 'nairobi.html', context)
+
+
+def muranga(request):
+    programs = Muranga.objects.all()
+    context = {
+    'programs':programs
+    }
+    return render(request, 'muranga.html', context)
+
+def nyeri(request):
+    programs = Nyeri.objects.all()
+    context = {
+    'programs':programs
+    }
+    return render(request, 'nyeri.html', context)
+
+def nakuru(request):
+    programs = Nakuru.objects.all()
+    context = {
+    'programs':programs
+    }
+    return render(request, 'nakuru.html', context)
+
+
+def donate(request, **kwargs):
+    donations = Kiambu.objects.filter(id=kwargs.get(item_id)).first()
+    context ={
+        'donation':donation
+    }
+    return render(request, 'donate.html', context)

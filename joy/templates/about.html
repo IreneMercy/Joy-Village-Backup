@@ -6,21 +6,23 @@
 <div class="conatainer-full bg-image ">
   <div class="container-fluid about overlay pb-5">
     <div class="row mb-5 pb-5 pt-5">
+      {% for i in about %}
       <div class="col-md-12 text-center  text-white padding-0 col-md-push">
         <div class="quote mt-4">
           <q cite="" class="text-black">
-            <p>We foresaw the problem many years before anybody else did.<br> We searched for solutions that will last through generations. <br> And we spoke about them when nobody else dared to. <br> Now we are doing something about it!!</p>
+            <p class="text-center">{{i.introtext}}</p>
           </q>
         </div>
-        <h5 class="text-uppercase mt-5"><strong>Our Mission</strong></h5>
-        <p class="text-left mt-2">JVF is a congregation of people of good will with the best intentions to transform the lives of young Kenyan men and women. In them we look to create a bright future for the country by instilling good morals, values and prosperity. We pursue this mission with zeal and commitment through faith and trust in God through a holistic and open approach.</p>
-        <h5 class="text-uppercase mt-5"><strong>Our vission</strong></h5>
-        <p class="text-left mt-2">is motivated by the strong desire to transform the society. We wish to see our youth improving their standards of living and having a quality, full and productive life that will resonate through the generations to come. </p>
+        <h5 class="text-uppercase mt-5"><strong>{{i.missionheading}}</strong></h5>
+        <p class="text-left mt-2">{{i.missiontext}}</p>
+        <h5 class="text-uppercase mt-5"><strong>{{i.visionheading}}</strong></h5>
+        <p class="text-left mt-2">{{i.visiontext}}</p>
         <div class="conatainer  text-white">
           <div class="col-md-4 pt-3 pb-3 pr-2">
           </div>
         </div>
       </div>
+      {% endfor %}
       <div class="col-md col-md-pull ">
         <!-- <img class="w-100 h-100" src="{% static 'images/child11.jpeg'%}" alt=""> -->
       </div>

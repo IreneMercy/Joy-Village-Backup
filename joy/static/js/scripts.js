@@ -1,22 +1,87 @@
 $(document).ready(function(){
+
+	$('#contactform').submit(function(event){
+		event.preventDefault()
+		form = $("#contactform")
+		$.ajax({
+			url:'/contact',
+			type:'POST',
+			data:form.serialize(),
+			dataType:'json',
+			success: function(data){
+				alert(data['success'])
+			},
+
+		})
+		$('#id_from_email').val(''),
+		$('#div_id_subject').val(''),
+		$('#div_id_message').val(''),
+		$('input[name=csrfmiddlewaretoken]').val()
+
+	})
+
+	$('.form').submit(function(event){
+		event.preventDefault()
+		form = $(".form")
+		$.ajax({
+			url:'',
+			type:'POST',
+			data:form.serialize(),
+			dataType:'json',
+			success: function(data){
+				alert(data['success'])
+			},
+
+		})
+		$('#id_from_email').val(''),
+		$('#div_id_subject').val(''),
+		$('#div_id_message').val(''),
+		$('input[name=csrfmiddlewaretoken]').val()
+
+	})
+
+	$('.form').submit(function(event){
+		event.preventDefault()
+		form = $(".myform")
+		$.ajax({
+			url:'',
+			type:'POST',
+			data:form.serialize(),
+			dataType:'json',
+			success: function(data){
+				alert(data['success'])
+			},
+
+		})
+		$('#id_from_email').val(''),
+		$('#div_id_subject').val(''),
+		$('#div_id_message').val(''),
+		$('input[name=csrfmiddlewaretoken]').val()
+
+	})
+
+	$('#myform').submit(function(event){
+		event.preventDefault()
+		form = $(".myform")
+		$.ajax({
+			url:'',
+			type:'POST',
+			data:form.serialize(),
+			dataType:'json',
+			success: function(data){
+				alert(data['success'])
+			},
+
+		})
+		$('#id_from_email').val(''),
+		$('#div_id_subject').val(''),
+		$('#div_id_message').val(''),
+		$('input[name=csrfmiddlewaretoken]').val()
+
+	})
+
 	$('.menu').click(function(){
 		$('.toggle').toggleClass('active');
 	})
 
-	$('#contactform').submit(function(e){
-		var name = document.getElementById('#name'),
-		    email = document.getElementById('#email'),
-		 		message = document.getElementById('#message');
-		if (name.value==''|| !email.value || !message.value){
-				alertify.error('Please fill all fields')
-		}
-		else{
-			$.ajax({
-				url:"http://formsfree.io/"
-			})
-			e.preventDefault()
-			$(this).get(0).reset()
-			alertify.succsess('Message sent')
-		}
-	})
-})
+});

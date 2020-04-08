@@ -1,1 +1,35 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="container-fluid eventpage  text-dark pt-5 pb-5">
+      <div class="row">
+        {% if programs %}
+          {% for program in programs %}
+              <div class="col-md-6 pb-5">
+                    <img class="img-thumbnail w-100" src="{{program.ProgramImage.url}}" alt="">
+                    <div class="eventpage">
+                      <h6 class=" mt-2 text-uppercase"><strong>{{program.ProgramTitle}}</strong></h6>
+                      <h6>Established On: {{program.ProgramOnset}}</h6>
+                      <p class="text-black">
+                        {{program.ProgramDescription}}
+                         <br>
+                         <br>
+                        <i>Location: {{program.ProgramLocation}}</i>
+                        <br>
+                        <button type="button" class="btn btn-sm text-white btn-event mt-2"> <a href="{% url 'donate' %}">Donate <i>20$</i></a> </button>
+                      </p>
+                      <h3 class="fancy"></h3>
+                      <h3 class="fancy"></h3>
+
+                      </div>
+                </div>
+        {% endfor %}
+        {% else %}
+          <div class="container-fluid mt-5 mb-5 pb-5">
+                <p class="text-center" style="font-size:25px;">There are currently no Programs</p>
+          </div>
+      {% endif %}
+      </div>
+  </div>
+{% endblock %}
