@@ -641,4 +641,12 @@ footer .widget ul li {
 }
 
 .btn-event{
+
 background-image: linear-gradient(to right top, #741703, #741703, #741703, #741703, #741703, #741703, #741703, #741703, #741703, #741703, #741703, #741703);}
+}
+
+.btn-event.program:hover{
+  text-decoration: none;
+  text-decoration-line: none;
+  color: white;
+}

@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'paypal.standard.ipn'
 
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -135,6 +136,9 @@ STATICFILES_DIRS = (
 )
 MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+PAYPAL_RECEIVER_EMAIL = 'mrspock-facilitator@gmail.com'
+PAYPAL_TEST = True
+
 
 
 

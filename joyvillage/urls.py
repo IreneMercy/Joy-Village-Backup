@@ -22,6 +22,7 @@ from django.conf import settings
 urlpatterns = [
     url('admin/', admin.site.urls),
     url('', include('joy.urls')),
+    url('paypal/', include('paypal.standard.ipn.urls'))
 
 ]
 urlpatterns += staticfiles_urlpatterns()

@@ -1,15 +1,18 @@
 $(document).ready(function(){
 
-	$('#contactform').submit(function(event){
+	$('#contactform').on('submit',function(event){
 		event.preventDefault()
+		console.log('success')
 		form = $("#contactform")
+
 		$.ajax({
 			url:'/contact',
 			type:'POST',
 			data:form.serialize(),
 			dataType:'json',
-			success: function(data){
-				alert(data['success'])
+			success: function(response){
+				$('#alert').html(response);
+				// alert(data['success'])
 			},
 
 		})

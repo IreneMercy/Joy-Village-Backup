@@ -117,6 +117,7 @@ class Nairobi(models.Model):
     ProgramTitle = models.CharField(max_length=30)
     image = models.ImageField()
     ProgramDescription = models.TextField(max_length=500)
+    donate = models.FloatField(null=True, blank=True)
 
     class Meta:
         verbose_name_plural = "Nairobi"
@@ -130,6 +131,7 @@ class Kiambu(models.Model):
     ProgramTitle = models.CharField(max_length=30)
     ProgramImage = models.ImageField()
     ProgramDescription = models.TextField(max_length=500)
+    donate = models.FloatField(null=True, blank=True)
     class Meta:
         verbose_name_plural = "Kiambu"
 
@@ -142,6 +144,8 @@ class Muranga(models.Model):
     ProgramTitle = models.CharField(max_length=30)
     ProgramImage = models.ImageField()
     ProgramDescription = models.TextField(max_length=500)
+    donate = models.FloatField(null=True, blank=True)
+
     class Meta:
         verbose_name_plural = "Muranga"
 
@@ -154,6 +158,7 @@ class Nyeri(models.Model):
     ProgramTitle = models.CharField(max_length=30)
     ProgramImage = models.ImageField()
     ProgramDescription = models.TextField(max_length=500)
+    donate = models.FloatField(null=True, blank=True)
 
     class Meta:
         verbose_name_plural = "Nyeri"
@@ -166,8 +171,12 @@ class Nakuru(models.Model):
     ProgramTitle = models.CharField(max_length=30)
     ProgramImage = models.ImageField()
     ProgramDescription = models.TextField(max_length=500)
+    donate = models.FloatField(null=True, blank=True)
 
     class Meta:
         verbose_name_plural = "Nakuru"
     def __str__(self):
         return self.ProgramTitle
+class YouthGroup(models.Model):
+    name=models.CharField(max_length=50)
+    location=models.CharField(max_length=30)

@@ -1,0 +1,6 @@
+--
+  deployment
+    task:
+      - export DEPLOYPATH=/home/jvfkenya/public_html/
+      - /bin/cp -R joyvillage $DEPLOYPATH
+      - /bin/cp style.css $DEPLOYPATH

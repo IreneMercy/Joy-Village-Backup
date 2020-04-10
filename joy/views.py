@@ -1,11 +1,14 @@
 from __future__ import unicode_literals
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from .models import Events, Gallery, News, Careers, Partners, Testimonials, About, Nairobi, Kiambu, Muranga, Nyeri, Nakuru, PastEvents
 from django.core.mail import send_mail,BadHeaderError
 from django.conf import settings
 from.forms import ContactForm, CommentForm
 from django.contrib import messages
+from paypal.standard.forms import PayPalPaymentsForm
+from django.views.decorators.csrf import csrf_exempt
+import json
 
 
 def home(request):
@@ -164,9 +167,14 @@ def nakuru(request):
     return render(request, 'nakuru.html', context)
 
 
-def donate(request, **kwargs):
-    donations = Kiambu.objects.filter(id=kwargs.get(item_id)).first()
-    context ={
-        'donation':donation
+def donate(request, pk):
+    program = Kiambu.objects.get(id=pk)
+    context = {
+        'program':program
     }
     return render(request, 'donate.html', context)
+
+def paymentcomplete(request):
+    body=json.loads(request.body)
+    print('Body:', body)
+    return JsonResponse('Payment completed!', safe=False)
