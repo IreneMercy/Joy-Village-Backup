@@ -15,18 +15,13 @@ import dj_database_url
 from decouple import config,Csv
 from dotenv import load_dotenv
 import getpass
-import cloudinary
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = config('SECRET_KEY')
-CSRF_COOKIE_SECURE = True
-SECURE_CONTENT_TYPE_NOSNIFF= True
-SECURE_BROWSER_XSS_FILTER=True
-SESSION_COOKIE_SECURE= True
-X_FRAME_OPTIONS='DENY'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 
 DEBUG = config('DEBUG', default=False, cast=bool)
@@ -39,7 +34,9 @@ DATABASES = {
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-ALLOWED_HOSTS=['localhost','.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+ALLOWED_HOSTS = ['joyvillage.herokuapp.com','127.0.0.1:8000','127.0.0.1']
+PAYPAL_TEST = True
 
 
 # Application definition
@@ -53,7 +50,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
-    'paypal.standard.ipn'
+    'paypal.standard.ipn',
+
 
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -136,9 +134,6 @@ STATICFILES_DIRS = (
 )
 MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-PAYPAL_RECEIVER_EMAIL = 'mrspock-facilitator@gmail.com'
-PAYPAL_TEST = True
-
 
 
 
@@ -148,10 +143,3 @@ EMAIL_HOST='smtp.gmail.com'
 EMAIL_PORT='587'
 EMAIL_HOST_USER='kimkidati@gmail.com'
 EMAIL_HOST_PASSWORD='12345678xx'
-
-
-cloudinary.config(
-  cloud_name = "irenemercy",
-  api_key = "994778698763279",
-  api_secret = "-vQXT2vZEUyP5nkZSHkBnGXPpA8"
-)

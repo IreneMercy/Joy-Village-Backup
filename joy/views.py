@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
-from .models import Events, Gallery, News, Careers, Partners, Testimonials, About, Nairobi, Kiambu, Muranga, Nyeri, Nakuru, PastEvents
+from .models import Events, FAQ, Gallery, News, Careers, Partners, Testimonials, About, Nairobi, Kiambu, Muranga, Nyeri, Nakuru, PastEvents
 from django.core.mail import send_mail,BadHeaderError
 from django.conf import settings
 from.forms import ContactForm, CommentForm
@@ -178,6 +178,10 @@ def paymentcomplete(request):
     body=json.loads(request.body)
     print('Body:', body)
     return JsonResponse('Payment completed!', safe=False)
-    
+
 def faqs(request):
-    return render(request, 'faq.html')
+    faqs = FAQ.objects.all()
+    params = {
+        'faqs':faqs,
+    }
+    return render(request, 'faq.html', params)

@@ -177,6 +177,22 @@ class Nakuru(models.Model):
         verbose_name_plural = "Nakuru"
     def __str__(self):
         return self.ProgramTitle
+
 class YouthGroup(models.Model):
     name=models.CharField(max_length=50)
     location=models.CharField(max_length=30)
+
+    class Meta:
+        verbose_name_plural = 'YouthGroups'
+
+    def __str__(self):
+        return sself.name
+
+class FAQ(models.Model):
+    question = models.TextField(max_length=100)
+    answer = models.TextField(max_length=100)
+
+    class Meta:
+        verbose_name_plural = 'FAQs'
+    def __str__(self):
+        return sself.question

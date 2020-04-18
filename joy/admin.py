@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 from django.contrib import admin
-from .models import Events, Gallery, News, Careers, Partners, Testimonials, About,Nairobi, Kiambu, Muranga,Nyeri, Nakuru, PastEvents
+from .models import Events, Gallery, News, Careers, Partners, Testimonials, About,Nairobi, Kiambu, Muranga,Nyeri, Nakuru, PastEvents, FAQ, YouthGroup
 
 admin.site.register(Events),
 admin.site.register(Gallery),
@@ -15,3 +15,5 @@ admin.site.register(Muranga),
 admin.site.register(Nyeri),
 admin.site.register(Nakuru),
 admin.site.register(PastEvents),
+admin.site.register(FAQ),
+admin.site.register(YouthGroup),
