@@ -3,6 +3,15 @@
 
 {% block content %}
 <div class="container-fluid mt-5 pt-5 pb-5">
-
+  <div class="row">
+    <div class="col-md-12">
+      {% for faq in faqs %}
+        <div class="col-md-4">
+          <h5>{{faq.question}}</h5>
+          <h5><strong>{{faq.answer}}</strong></h5>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>
 {% endblock %}
