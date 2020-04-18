@@ -186,7 +186,7 @@ class YouthGroup(models.Model):
         verbose_name_plural = 'YouthGroups'
 
     def __str__(self):
-        return sself.name
+        return self.name
 
 class FAQ(models.Model):
     question = models.TextField(max_length=100)
@@ -195,4 +195,4 @@ class FAQ(models.Model):
     class Meta:
         verbose_name_plural = 'FAQs'
     def __str__(self):
-        return sself.question
+        return self.question
