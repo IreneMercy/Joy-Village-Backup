@@ -178,3 +178,6 @@ def paymentcomplete(request):
     body=json.loads(request.body)
     print('Body:', body)
     return JsonResponse('Payment completed!', safe=False)
+    
+def faqs(request):
+    return render(request, 'faq.html')

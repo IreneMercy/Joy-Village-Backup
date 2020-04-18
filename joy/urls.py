@@ -22,7 +22,8 @@ urlpatterns = [
     path('nyeri', views.nyeri, name='nyeri'),
     path('nakuru', views.nakuru, name='nakuru'),
     path('donate/<int:pk>/', views.donate, name='donate'),
-    path('complete', views.paymentcomplete, name='complete')
+    path('complete', views.paymentcomplete, name='complete'),
+    path('faq', views.faqs, name='faq'),
 
 
 
