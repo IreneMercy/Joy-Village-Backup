@@ -24,6 +24,8 @@ urlpatterns = [
     path('donate/<int:pk>/', views.donate, name='donate'),
     path('complete', views.paymentcomplete, name='complete'),
     path('faq', views.faqs, name='faq'),
+    path('youthgroup', views.youthgroup, name='youthgroup'),
+
 
 
 

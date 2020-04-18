@@ -206,34 +206,7 @@
                 <h2><i>adopt a youth group &amp; </i>SAVE LIVES</h2>
                 <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit autugit, sed <br> consequuntur magni dolores ratione voluptatem sequi nesciunt. Neque porro <br> quisquamst. Nemo enim ipsam voluptatem quia volupta.</p>
                 <div class="button-set">
-                  <a class="btn style1 mt-3" data-toggle="modal" data-target="#exampleModalLong" href="#" title="">ADOPT A YOUTH GROUP</a>
-                  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <!-- <h5 class="modal-title" id="exampleModalLongTitle"><small>Contact</small></h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button> -->
-                        </div>
-                        <div class="modal-body">
-                          <div class="col-md-12 card-body card-bg">
-                            <form id="myform"  method="POST" data-url=''>
-                              {% csrf_token %}
-                              <p>{{form|crispy}}</p>
-                              <div class="form-actions mb-5">
-                                   <button class="btn btn-primary btn-sm"  type="submit">Send Message</button>
-
-                              </div>
-                             </form>
-                          </div>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <a class="btn style1 mt-3" href="{% url 'youthgroup' %}" title="">ADOPT A YOUTH GROUP</a>
                   <a class="btn style3 mt-3" data-toggle="modal" data-target="#exampleModalLong" href="#" title="">JOIN OUR COMPAIGN</a>
                   <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                     <div class="modal-dialog" role="document">

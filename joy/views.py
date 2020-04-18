@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
-from .models import Events, FAQ, Gallery, News, Careers, Partners, Testimonials, About, Nairobi, Kiambu, Muranga, Nyeri, Nakuru, PastEvents
+from .models import Events, FAQ, Gallery, News, Careers, Partners, Testimonials, About, Nairobi, Kiambu, Muranga, Nyeri, Nakuru, PastEvents, YouthGroup
 from django.core.mail import send_mail,BadHeaderError
 from django.conf import settings
 from.forms import ContactForm, CommentForm
@@ -185,3 +185,10 @@ def faqs(request):
         'faqs':faqs,
     }
     return render(request, 'faq.html', params)
+
+def youthgroup(request):
+    youthgroups = YouthGroup.objects.all()
+    params = {
+        'youthgroups':youthgroups,
+    }
+    return render(request, 'youthgroup.html', params)
