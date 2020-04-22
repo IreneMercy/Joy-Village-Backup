@@ -5,20 +5,20 @@
   <div class="row pt-5">
       {% for event in events %}
           <div class="col-md-6 pb-5">
-                <img src="{{event.image.url}}" alt="">
-                <div>
-                  <button type="button" class="btn btn-sm text-white btn-event  mt-5">{{event.date}}</button>
-                </div>
+            <h6 class="btn-event pt-3 pb-3 text-white text-center text-uppercase mt-5">{{event.title}}</h6>
+            <p>{{event.description}}</p>
+                <img class="w-100" src="{{event.image.url}}" alt="">
                 <div class="eventpage">
-                  <h6 class=" mt-5">{{event.title}}</h6>
                   <p class="text-black">
-                    {{event.description}}
                      <br>
                      <br>
-                    <i>Venue: {{event.venue}}</i>
+                    <i><strong>Venue: {{event.venue}}</strong></i>
                     <br>
-                    <i>Time: {{event.time}}</i>
+                    <i><strong>Time: {{event.time}}</strong></i>
                   </p>
+                  <div>
+                    <button type="button" class="btn  btn-sm text-white btn-event  mt-1">{{event.date}}</button>
+                  </div>
                   <h3 class="fancy"></h3>
                   <h3 class="fancy"></h3>
 

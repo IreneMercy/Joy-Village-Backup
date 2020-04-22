@@ -24,7 +24,7 @@ class PastEvents(models.Model):
     time = models.CharField(max_length=30)
     image = models.ImageField()
     title = models.CharField(max_length=30)
-    description = models.TextField(max_length=155)
+    description = models.TextField(max_length=500)
     pub_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -48,8 +48,8 @@ class Gallery(models.Model):
         verbose_name_plural = "Gallery"
 
 class News(models.Model):
-    newsimage = models.ImageField(upload_to="media")
-    title = models.CharField(max_length=30)
+    newsimage = models.ImageField(upload_to="media", blank=True)
+    title = models.CharField(max_length=155)
     description = models.TextField(max_length=1000)
     pub_date = models.DateTimeField(auto_now_add=True)
     caption = models.CharField(max_length=100)
@@ -104,12 +104,13 @@ class About(models.Model):
     missiontext = models.TextField(max_length=500)
     visionheading = models.TextField(max_length=30)
     visiontext = models.TextField(max_length=500)
+    image = models.ImageField(upload_to='media', blank=True)
 
     class Meta:
         verbose_name_plural = "About"
 
     def __str__(self):
-        return self.str('About')
+        return self.introtext
 
 class Nairobi(models.Model):
     ProgramOnset = models.CharField(max_length=10)

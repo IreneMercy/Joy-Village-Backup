@@ -416,12 +416,12 @@ background-image: linear-gradient(to right top, #741703, #741703, #741703, #7417
   font-size:50px;
   line-height: 2;
 }
-/* .bg-7{
+.bg-7{
   background-image: url('../images/parallax7.jpg');
   height: 100vh;
   background-repeat: no-repeat;
 
-} */
+}
 .video-overlay .round-icon-btn {
     position: relative;
     display: inline-block;
@@ -540,6 +540,10 @@ footer .widget ul li {
 
 .about{
   font-family: Roboto;
+  background-color:#f6f6f6;
+}
+.about p{
+  line-height:35px;
 }
 .padding-0{
     padding-right:0;
@@ -569,7 +573,7 @@ footer .widget ul li {
 
 
 .overlay{
-  background-image: linear-gradient(to right top, #d16b8a, #aa5f88, #82547e, #5c496e, #3d3c57, #3a445f, #374d66, #34556c, #397b95, #3aa4bb, #43cfda, #5ffbf1);
+  background-color:black;
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -579,7 +583,7 @@ footer .widget ul li {
   -o-background-size: cover;
   background-size: cover;
   height: auto;
-  opacity: 0.9;
+  opacity: 0.6;
 }
 .sectionnews{
   margin-top: 10%;
@@ -601,9 +605,9 @@ footer .widget ul li {
   color: #ffffff;
   margin-bottom: 5%;
 }
-.contactdetail{
+/* .contactdetail{
   text-decoration-line: line-through;
-}
+} */
 
 /* Programs */
 .kiambu{
@@ -639,6 +643,8 @@ footer .widget ul li {
 .eventspage h3{
   font-size: 16px;
 }
+
+
 
 .btn-event{
 

@@ -3,24 +3,22 @@
 
 
 {% block content %}
-<div class="conatainer-full bg-image ">
-  <div class="container-fluid about overlay pb-5">
+<div class="conatainer-full text-black abut-bg">
+  <div class="container-fluid about  pb-5">
     <div class="row mb-5 pb-5 pt-5">
       {% for i in about %}
-      <div class="col-md-12 text-center  text-white padding-0 col-md-push">
-        <div class="quote mt-4">
-          <q cite="" class="text-black">
-            <p class="text-center">{{i.introtext}}</p>
-          </q>
+      <div class="col-md-6 card-body  padding-0 col-md-push">
+        <div class="quote mt-4 pb-5">
+            <p class="text-center"><strong>{{i.introtext}}</strong></p>
         </div>
-        <h5 class="text-uppercase mt-5"><strong>{{i.missionheading}}</strong></h5>
-        <p class="text-left mt-2">{{i.missiontext}}</p>
-        <h5 class="text-uppercase mt-5"><strong>{{i.visionheading}}</strong></h5>
-        <p class="text-left mt-2">{{i.visiontext}}</p>
-        <div class="conatainer  text-white">
-          <div class="col-md-4 pt-3 pb-3 pr-2">
-          </div>
-        </div>
+        <h5 class="text-uppercase text-center mt-4"><strong>{{i.missionheading}}</strong></h5>
+        <p class=" mt-2">{{i.missiontext}}</p>
+        <h5 class="text-uppercase mt-4 text-center"><strong>{{i.visionheading}}</strong></h5>
+        <p class="mt-2">{{i.visiontext}}</p>
+
+      </div>
+      <div class="col-md-6">
+        <img class="w-100" src="{{i.image.url}}" alt="">
       </div>
       {% endfor %}
       <div class="col-md col-md-pull ">

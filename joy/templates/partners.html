@@ -3,11 +3,22 @@
 {% block content %}
   <div class="container-fluid pb-5 mb-5 pt-5">
     <div class="row">
-      {% for partner in partners %}
-        <div class="col-md-3 ">
-          <img class="w-100 " src="{{partner.partnerimage.url}}" alt="">
+        {% if partners %}
+        {% for partner in partners %}
+          <div class="col-md-3 ">
+            <img class="w-100 " src="{{partner.partnerimage.url}}" alt="">
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h4 class="text-center"><strong>Our Strength comes from you and me.</strong> </h4>
+            </div>
+          </div>
         </div>
-      {% endfor %}
+      {% endif %}
+
     </div>
   </div>
 {% endblock %}

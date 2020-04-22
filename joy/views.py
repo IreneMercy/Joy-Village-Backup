@@ -35,10 +35,12 @@ def home(request):
 
     events = Events.objects.all()[:3]
     comments = Testimonials.objects.all()
+    news = News.objects.all()[:3]
     context = {
     'events':events,
     'form':form,
     'comments':comments,
+    'news':news,
     }
     messages.info(request, messages.SUCCESS, 'Email sent successfully.')
     return render(request,'home.html', context)
@@ -169,6 +171,7 @@ def nakuru(request):
 
 def donate(request, pk):
     program = Kiambu.objects.get(id=pk)
+    news = News.objects.get(id=pk)
     context = {
         'program':program
     }
